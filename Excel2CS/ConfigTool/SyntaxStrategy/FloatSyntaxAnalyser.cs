@@ -4,7 +4,7 @@ namespace AirEditor.Config
 {
     public class FloatSyntaxAnalyser : ISyntaxAnalyser
     {
-        public string TrueType => "System.ValueType.Float";
+        public string TrueType => "System.Single";
         public object StringToValue(string str, string type, int row, int column)
         {
             bool result = float.TryParse(str, out var value);
