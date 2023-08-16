@@ -72,9 +72,8 @@ namespace AirEditor
                 var modelName = Path.GetFileNameWithoutExtension(x);
 
 
-                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-                modelName = textInfo.ToTitleCase(modelName);
-
+                modelName = modelName[0].ToString().ToUpper() + modelName.Substring(1,modelName.Length-1);
+                
 
                 string code = TableToModel.GetCode(table, modelName, modelName);
                 stream.Dispose();

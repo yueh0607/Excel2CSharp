@@ -2,7 +2,7 @@
 
 namespace AirEditor.Config
 {
-    [ExcelFilter(typeof(PrimaryKeyFilter))]
+    [ExcelFilter(typeof(PrimaryKeyFilter),2)]
     public class PrimaryKeyFilter : SyntaxFilter<string>
     {
         readonly HashSet<string> filterID = new HashSet<string>();
