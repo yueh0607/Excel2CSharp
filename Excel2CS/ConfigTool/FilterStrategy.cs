@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace AirEditor.Config
 {
@@ -10,9 +11,27 @@ namespace AirEditor.Config
         /// </summary>
         private static List<SyntaxFilter<string>> filters = new List<SyntaxFilter<string>>()
     {
-        new NoteFilter(),
-        new PrimaryKeyFilter()
+        //new NoteFilter(),
+        //new PrimaryKeyFilter()
     };
+        public static void InitFilters()
+        {
+            filters.Clear();
+            var ass = AppDomain.CurrentDomain.GetAssemblies();
+            foreach (var assembly in ass)
+            {
+                var types = assembly.GetTypes();
+                foreach (var type in types)
+                {
+                    var m_filter = type.GetCustomAttribute<ExcelFilterAttribute>();
+                    if (m_filter != null)
+                        filters.Add((SyntaxFilter<string>)Activator.CreateInstance(m_filter.FilterType));
+
+                }
+
+            }
+        }
+
 
         public static int IgnoreDataRowCount = 2;
         public static ConfigTable<string> GetTable(ConfigTable<string> table)

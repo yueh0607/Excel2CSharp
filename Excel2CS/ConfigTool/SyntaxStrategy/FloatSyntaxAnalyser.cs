@@ -2,6 +2,7 @@
 
 namespace AirEditor.Config
 {
+    [ExcelTypeSyntax("float", typeof(FloatSyntaxAnalyser))]
     public class FloatSyntaxAnalyser : ISyntaxAnalyser
     {
         public string TrueType => "System.Single";

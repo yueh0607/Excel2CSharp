@@ -2,6 +2,7 @@
 
 namespace AirEditor.Config
 {
+    [ExcelTypeSyntax("int", typeof(IntSyntaxAnalyser))]
     public class IntSyntaxAnalyser : ISyntaxAnalyser
     {
         public string TrueType => "System.Int32";

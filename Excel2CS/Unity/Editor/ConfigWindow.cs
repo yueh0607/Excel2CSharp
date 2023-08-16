@@ -64,12 +64,17 @@ namespace AirEditor
             {
                 ExcelStream stream = new ExcelStream(x);
                 stream.Read();
+
+                FilterStrategy.InitFilters();
+                SyntaxStrategy.InitTypes();
+
                 ITable<string> table = FilterStrategy.GetTable(stream.Data);
                 var modelName = Path.GetFileNameWithoutExtension(x);
 
 
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 modelName = textInfo.ToTitleCase(modelName);
+
 
                 string code = TableToModel.GetCode(table, modelName, modelName);
                 stream.Dispose();

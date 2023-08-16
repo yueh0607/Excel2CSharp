@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace AirEditor.Config
 {
+    [ExcelFilter(typeof(FormatFilter))]
     public class FormatFilter : SyntaxFilter<string>
     {
 

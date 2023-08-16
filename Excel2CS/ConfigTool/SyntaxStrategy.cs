@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
+
 namespace AirEditor.Config
 {
     public class SyntaxStrategy
@@ -9,15 +11,33 @@ namespace AirEditor.Config
         /// 策略表：在这俩进行类型转换器定义
         /// </summary>
         private static Dictionary<string, ISyntaxAnalyser> syntaxAnalyers = new Dictionary<string, ISyntaxAnalyser>()
-    {
-            { "int",new IntSyntaxAnalyser()},
-            { "string",new StringSyntaxAnalyser()},
-            { "float",new FloatSyntaxAnalyser()},
-            { "bool",new BooleanSyntaxAnalyser()},
-             { "func1",new Func1SyntaxAnalyser()},
-             { "func2",new Func2SyntaxAnalyser()},
-             { "func3",new Func3SyntaxAnalyser()},
-    };
+        {
+            //{ "int",new IntSyntaxAnalyser()},
+            //{ "string",new StringSyntaxAnalyser()},
+            //{ "float",new FloatSyntaxAnalyser()},
+            //{ "bool",new BooleanSyntaxAnalyser()},
+            // { "func1",new Func1SyntaxAnalyser()},
+            // { "func2",new Func2SyntaxAnalyser()},
+            // { "func3",new Func3SyntaxAnalyser()},
+        };
+
+        public static void InitTypes()
+        {
+            syntaxAnalyers.Clear();
+            var ass = AppDomain.CurrentDomain.GetAssemblies();
+            foreach (var assembly in ass)
+            {
+                var types = assembly.GetTypes();
+                foreach (var type in types)
+                {
+                    var m_filter = type.GetCustomAttribute<ExcelTypeSyntaxAttribute>();
+                    if (m_filter != null)
+                        syntaxAnalyers.Add(m_filter.Key, (ISyntaxAnalyser)Activator.CreateInstance(m_filter.SyntaxType));
+
+                }
+
+            }
+        }
 
 
         /// <summary>

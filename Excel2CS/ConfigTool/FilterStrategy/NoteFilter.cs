@@ -2,6 +2,7 @@
 
 namespace AirEditor.Config
 {
+    [ExcelFilter(typeof(NoteFilter))]
     public class NoteFilter : SyntaxFilter<string>
     {
         readonly HashSet<int> filterRow = new HashSet<int>();

@@ -2,6 +2,7 @@
 
 namespace AirEditor.Config
 {
+    [ExcelTypeSyntax("bool",typeof(BooleanSyntaxAnalyser))]
     public class BooleanSyntaxAnalyser : ISyntaxAnalyser
     {
         public string TrueType => "System.Boolean";
