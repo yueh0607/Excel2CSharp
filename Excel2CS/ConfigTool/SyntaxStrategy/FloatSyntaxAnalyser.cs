@@ -13,7 +13,7 @@ namespace AirEditor.Config
             {
                 throw new InvalidCastException($"\"{str}\" is not a valid data for \"{type}\" at guessing position[{row + 1},{column + 1}]");
             }
-            return value;
+            return str+"F";
         }
     }
 }
