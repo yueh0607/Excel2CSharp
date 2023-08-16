@@ -63,11 +63,11 @@ new Testdata(){id = 3,value = 336}
 ```
 
 # 拓展类型规则
-![image](https://github.com/yueh0607/Excel2CSharp/assets/102401735/adb264d0-8c83-4652-bb36-57dab67cf97f)
-简单的很，只需要返回字符串，或者抛异常，然后添加策略
-![image](https://github.com/yueh0607/Excel2CSharp/assets/102401735/33817ecf-3c08-4d5c-a3aa-ca8f4fe0f2fe)
+简单的很，加个特性，只需要返回字符串，或者抛异常，然后添加策略
+
+![image](https://github.com/yueh0607/Excel2CSharp/assets/102401735/e5874630-083a-4a16-a840-baed572335a9)
 
 #拓展分析规则
 同理
-![image](https://github.com/yueh0607/Excel2CSharp/assets/102401735/7c17224b-be62-4024-8efa-a2935ac3c382)
-![image](https://github.com/yueh0607/Excel2CSharp/assets/102401735/72be269b-15ff-43c9-86b9-cc621b1ee7c4)
+![image](https://github.com/yueh0607/Excel2CSharp/assets/102401735/9a444d64-0e2d-4fd6-9741-41ea730a67d9)
+
