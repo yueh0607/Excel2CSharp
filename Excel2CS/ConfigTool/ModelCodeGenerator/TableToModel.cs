@@ -109,7 +109,7 @@ namespace AirFramework.ConstModel
                 for (int j = 0; j < table.ColumnCount; ++j)
                 {
 
-                    builder.Append($"{(j == 0 ? "" : ',')}{table[1, j]} = {SyntaxStrategy.GetValue(table[i, j], table[0, j], i, j)}");
+                    builder.Append($"{(j == 0 ? "" : ',')}{table[1, j]} = {SyntaxStrategy.GetValue(table[i, j], table[0, j], i, j, table[i,0])}");
 
                 }
 

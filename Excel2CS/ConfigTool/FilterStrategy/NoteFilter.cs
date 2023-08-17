@@ -12,7 +12,7 @@ namespace AirEditor.Config
 
         private static bool IsNote(string text)
         {
-            return text == note;
+            return text.StartsWith(note);
         }
 
         public override ConfigTable<string> GetNextTable(ConfigTable<string> table)

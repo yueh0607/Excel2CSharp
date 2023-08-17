@@ -9,11 +9,11 @@ namespace AirEditor.Config
         /// <summary>
         /// 策略表:在这里进行逐过程数据过滤和检查
         /// </summary>
-        private static SortedList<int, SyntaxFilter<string>> filters = new SortedList<int, SyntaxFilter<string>>()
-        {
-            //new NoteFilter(),
-            //new PrimaryKeyFilter()
-        };
+        private static SortedList<int,SyntaxFilter<string>> filters = new SortedList<int,SyntaxFilter<string>>()
+    {
+        //new NoteFilter(),
+        //new PrimaryKeyFilter()
+    };
         public static void InitFilters()
         {
             filters.Clear();
@@ -25,7 +25,7 @@ namespace AirEditor.Config
                 {
                     var m_filter = type.GetCustomAttribute<ExcelFilterAttribute>();
                     if (m_filter != null)
-                        filters.Add(m_filter.Order, (SyntaxFilter<string>)Activator.CreateInstance(m_filter.FilterType));
+                        filters.Add(m_filter.Order,(SyntaxFilter<string>)Activator.CreateInstance(m_filter.FilterType));
 
                 }
 

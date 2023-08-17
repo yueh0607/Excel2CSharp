@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace AirEditor.Config
 {
@@ -6,9 +7,10 @@ namespace AirEditor.Config
     public class StringSyntaxAnalyser : ISyntaxAnalyser
     {
         public string TrueType => "System.String";
-        public object StringToValue(string str, string type, int row, int column)
+        public object StringToValue(string str, string type, int row, int column,string  key)
         {
             return "\""+str+ "\"";
         }
     }
+
 }

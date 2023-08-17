@@ -54,13 +54,13 @@ namespace AirEditor.Config
         /// <param name="typeSign"></param>
         /// <returns></returns>
         /// <exception cref="InvalidCastException"></exception>
-        public static object GetValue(string str, string typeSign, int row, int column)
+        public static object GetValue(string str, string typeSign, int row, int column,string key)
         {
             if (!syntaxAnalyers.ContainsKey(typeSign))
             {
                 throw new InvalidCastException($"Unsupported type :\"{typeSign}\" at guessing column \"{column + 1}\"");
             }
-            return syntaxAnalyers[typeSign].StringToValue(str, typeSign, row, column);
+            return syntaxAnalyers[typeSign].StringToValue(str, typeSign, row, column,key);
         }
 
         /// <summary>

@@ -7,7 +7,7 @@ namespace AirEditor.Config
 
 
         public string TrueType { get; }
-        public object StringToValue(string str, string type, int row, int column);
+        public object StringToValue(string str, string type, int row, int column,string key);
     }
 
 }

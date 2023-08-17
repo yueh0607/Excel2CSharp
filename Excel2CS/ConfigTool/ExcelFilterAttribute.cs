@@ -11,7 +11,7 @@ public class ExcelTypeSyntaxAttribute : System.Attribute
     public Type SyntaxType = null;
     public ExcelTypeSyntaxAttribute(string key, Type syntax)
     {
-        if (syntax == null || key == null)
+        if(syntax == null||key==null)
         {
             throw new ArgumentNullException("key or filter");
         }
