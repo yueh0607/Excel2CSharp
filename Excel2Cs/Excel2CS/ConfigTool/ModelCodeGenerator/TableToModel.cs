@@ -112,11 +112,7 @@ namespace AirFramework.ConstModel
                 for (int j = 0; j < table.ColumnCount; ++j)
                 {
 
-<<<<<<<< HEAD:Excel2Cs/Excel2CS/ConfigTool/ModelCodeGenerator/TableToModel.cs
                     builder.Append($"{(j == 0 ? "" : ",")}{table[1, j]} = {SyntaxStrategy.GetValue(table[i, j], table[0, j], i, j, table[i,0])}");
-========
-                    builder.Append($"{(j == 0 ? "" : ',')}{table[1, j]} = {SyntaxStrategy.GetValue(table[i, j], table[0, j], i, j, table[i,0])}");
->>>>>>>> 6433cc4e7744e1d694fe8fed4531ea1951d2a2bf:Excel2CS/ConfigTool/ModelCodeGenerator/TableToModel.cs
 
                 }
 
