@@ -39,7 +39,7 @@ new Testdata(){id = 3,value = 336}
 ,new Testdata(){id = 11,value = 336}
         };
 
-        public System.Collections.Generic.Dictionary<System.Int32,Testdata> dataMap = null;
+        private System.Collections.Generic.Dictionary<System.Int32,Testdata> dataMap = null;
         public System.Collections.Generic.Dictionary<System.Int32,Testdata> DataMap 
         {
             get
